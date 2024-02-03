@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+    }
+    int q;
+    cin >> q;
+    for(int _ = 0; _ < q; ++_){
+        int type;
+        cin >> type;
+        if(type == 0) {
+            // pushfront
+            int v;
+            cin >> v;
+            a.insert(a.begin(), v);
+        } else {
+            // popfront
+            if(a.empty()) {
+                cout << "Error" << endl;
+            } else {
+                cout << a[0] << endl;
+                a.erase(a.begin());
+            }
+        }
+    }
+    return 0;
+}
